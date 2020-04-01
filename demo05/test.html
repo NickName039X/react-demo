@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8"/>
-        <script src="../build/react.development.js"></script>
-        <script src="../build/react-dom.development.js"></script>
-        <script src="../build/babel.min.js"></script>
-    </head>
-    <body>
-        <div id="example"></div>
-        <script type="text/babel">
+	<head>
+		<meta charset="UTF-8"/>
+		<script src="../build/react.development.js"></script>
+		<script src="../build/react-dom.development.js"></script>
+		<script src="../build/babel.min.js"></script>
+	</head>
+	<body>
+		<div id="example"></div>
+		<script type="text/babel">
             function NotesList(props) {
+                let user = props.user;
+                /**
+                 * jsx只局限于单个表达式
+                 */
                 return (
                     <ol>
-                      {
-                        console.log(this);
-                        this.props.map(item => {
-                          return <li>item</li>
-                        })
-                      }
+                        {console.log(user)}
+                        {
+                            user.map((item,i) => {
+                                return <li key={i}>{item}</li>
+                            })
+                        }
                     </ol>
                 )
             }
@@ -33,7 +37,7 @@
                 </NotesList>,
                 document.getElementById('example')
             );
-        </script>
-    </body>
+		</script>
+	</body>
 </html>
 

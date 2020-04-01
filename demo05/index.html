@@ -19,12 +19,18 @@
           console.log("getDerivedStateFromProps被调用了")
         }
 
+        //相当于vue的mounted
         componentWillMount() {
           console.log("componentWillMount被调用了")
         }
 
         componentDidMount() {
           console.log("componentDidMount被调用了")
+        }
+
+        //相当于vue的destoryed
+        componentWillUnmount() {
+          console.log("componentWillUnmount被调用了")
         }
 
 
