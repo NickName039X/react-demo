@@ -9,6 +9,14 @@
 	<body>
 		<div id="root"></div>
 		<script type="text/babel">
+
+            window.addEventListener('pageshow', function () {
+                console.log('on pageshow')
+            });
+            window.addEventListener('load', function () {
+                console.log('load')
+            });
+
             // This component illustrates a getDerivedStateFromProps anti-pattern.
             // Don't copy this approach!
             class EmailInput extends React.Component {
